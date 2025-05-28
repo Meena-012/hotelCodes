@@ -1,49 +1,46 @@
-Contact-Us Codes
-===============
+Contact-Us
+==========
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Page</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
     <style>
-        body {
+      
+        .split-background {
             font-family: 'Times New Roman', serif;
-            background-color: #f8f7f6;
+            background: linear-gradient(to bottom, #dddad7 50%, #f8f7f6 50%);
+            min-height: 100vh;
         }
 
         .location {
             text-align: center;
-            padding: 40px 0;
+            padding: 10px 0;
         }
 
         .location h2 {
             font-style: italic;
-            color: #999;
+            color: #d4a373;
         }
 
         .location p {
             font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 26px;
         }
 
         .contact-options {
             display: flex;
             justify-content: space-around;
             text-align: center;
-            padding: 40px 0;
-        }
-
-        .contact-options div {
-            width: 30%;
+            padding: 30px 0;
+            font-size: large;
         }
 
         .contact-options i {
-            font-size: 30px;
+            font-size: 50%;
             margin-bottom: 10px;
         }
 
@@ -62,7 +59,7 @@ Contact-Us Codes
         }
 
         .form-section h2 {
-            font-weight: bold;
+            font-weight: medium;
             font-size: 28px;
             margin-bottom: 20px;
         }
@@ -92,24 +89,35 @@ Contact-Us Codes
         table {
             margin: auto;
             width: 70%;
+            border-collapse: separate;
+            border-spacing: 10px;
         }
 
         table td {
+            padding: 15px 25px;
+            font-size: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        .btn-black {
+            background-color: rgb(132, 106, 45);
+            color: black;
+            border-radius: 10px;
             padding: 10px 20px;
-            font-size: 16px;
         }
     </style>
 </head>
 
 <body>
+    <div class="split-background">
     <div class="location">
         <h2>Location</h2>
-        <p>54 Berrick 2nd Street Boston, MA02115, United States.</p>
+        <p>54 Berrick 2nd Street Boston, MA02115, <br>United States.</p>
     </div>
 
     <div class="contact-options">
         <div>
-            <i class="bi bi-telephone"></i>
+            <a ><i class="bi bi-telephone"></i></a>
             <h6>Make a Call</h6>
             <p>Feel free to call us for general inquiries.</p>
             <strong>+01 234 567 8900</strong>
@@ -131,7 +139,6 @@ Contact-Us Codes
     <div class="form-section">
         <h4>Drop A Line</h4>
         <h2>SEND YOUR MESSAGE US</h2>
-        <p>Please feel free to get in touch using the form below. We’d love to hear from you.</p>
         <form>
             <div class="row g-3">
                 <div class="col-md-6">
@@ -163,7 +170,7 @@ Contact-Us Codes
     <div class="quick-contact">
         <h4>Quick Contact</h4>
         <h2>CONTACT FOR ALL YOUR NEEDS</h2>
-        <table>
+        <table >
             <tr>
                 <td>Restaurant</td>
                 <td>+44 - 456 - 678 - 4567</td>
@@ -186,8 +193,8 @@ Contact-Us Codes
             </tr>
         </table>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+</div>
+    
 </body>
 
 </html>
