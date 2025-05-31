@@ -494,3 +494,105 @@ hotel listing page:
 </body>
 </html>
 
+
+updated card hotel:
+==================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Cards</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      position: absolute;
+    }
+
+    
+    .our-room {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .btn-custom {
+      background-color: rgb(176, 134, 85);
+      color: black;
+      border: none;
+      margin-bottom: 4%;
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-css:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .justify-text {
+      font-family: serif;
+    }
+
+    .text-start {
+      font-family: serif;
+      font-weight: bold;
+      color: rgb(128, 93, 59);
+    }
+
+    .content-section {
+      padding: 60px 15px;
+    }
+
+ 
+    @media (max-width: 768px) {
+      .image-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <p class="text-center our-room">Our Hotels</p>
+
+  <div class="row align-items-center justify-content-center">
+    <div
+      class="card col-lg-4 mt-1 mb-3 text-center rounded card-css"
+      style="box-shadow: 0 0 10px 0;"
+      *ngFor="let hotel of hotels"
+    >
+      <img
+        src="https://i.pinimg.com/736x/b2/85/d5/b285d5c19bf3ede848d22f281581f41c.jpg"
+        class="img-fluid mt-3 mb-3 rounded-4"
+      />
+      <p class="text-start mb-2">{{ hotel.hotelName }}</p>
+      <p class="justify-text" style="text-align: justify;">
+        Hotel ID: {{hotel.hotelId}} <br/>
+        Location: {{ hotel.location }} <br />
+        Amenities: {{ hotel.amenities }} <br />
+        Room Count: {{ hotel.roomCount }} <br />
+        Room ID: {{ hotel.roomId }} <br />
+        Manager ID: {{ hotel.managerId }}
+      </p>
+      <a href="#" class="btn btn-custom w-100">BOOK HOTEL </a>
+    </div>
+  </div>
+
+  <div class="text-center mb-4">
+    <button type="button" class="btn btn-success" routerLink="/addHotel">
+      Add More Hotels
+    </button>
+  </div>
+
+</body>
+</html>
+
+
