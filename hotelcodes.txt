@@ -198,3 +198,299 @@ Contact-Us
 </body>
 
 </html>
+
+
+add hotel:
+=========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .colour {
+      background-color: #d4a373;
+      color: white;
+      
+    }
+
+    body {
+      background-image: url('https://i.pinimg.com/736x/c4/0e/c7/c40ec79c208a34772e57ae5d36da42db.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .card.rounded-card {
+      border-radius: 20px;
+      overflow: hidden; /* Ensures content respects the border-radius */
+    }
+
+
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="card shadow rounded-card">
+          <div class="card-header colour text-center">
+            <h4 class="mb-0">Add Hotel</h4>
+          </div>
+          <div class="card-body p-4">
+            <form #addHotelForm="ngForm" (ngSubmit)="onSubmit()">
+              <div class="form-group mb-3">
+                <label for="hotelName">Hotel Name</label>
+                <input type="text" class="form-control" id="hotelName" 
+                       placeholder="Enter Hotel Name" 
+                       [(ngModel)]="hotel.hotelName" 
+                       name="hotelName" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="location"
+                       placeholder="Enter Location" 
+                       [(ngModel)]="hotel.location" 
+                       name="location" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="managerId">Manager ID</label>
+                <input type="text" class="form-control" id="managerId" 
+                       placeholder="Enter Manager ID" 
+                       [(ngModel)]="hotel.managerId" 
+                       name="managerId" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="roomId">Room ID</label>
+                <input type="text" class="form-control" id="roomId" 
+                       placeholder="Enter Room ID" 
+                       [(ngModel)]="hotel.roomId" 
+                       name="roomId" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="amenities">Amenities</label>
+                <input type="text" class="form-control" id="amenities" 
+                       placeholder="Enter Amenities" 
+                       [(ngModel)]="hotel.amenities" 
+                       name="amenities" required>
+              </div>
+              <div class="form-group mb-4">
+                <label for="roomCount">Room Count</label>
+                <input type="text" class="form-control" id="roomCount" 
+                       placeholder="Enter Room Count" 
+                       [(ngModel)]="hotel.roomCount" 
+                       name="roomCount" required>
+              </div>
+              <button type="submit" class="btn colour btn-block py-2">Enter</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+add room:
+========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Room Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .colour {
+      background-color: #d4a373;
+      color: white;
+    }
+
+    body {
+      background-image: url('https://i.pinimg.com/736x/c4/0e/c7/c40ec79c208a34772e57ae5d36da42db.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .card.rounded-card {
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .pading{
+      margin-top: 5%;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container pading">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow rounded-card">
+          <div class="card-header colour text-center">
+            <h4 class="mb-0">Add Room</h4>
+          </div>
+          <div class="card-body p-4">
+            <form #roomform="ngForm" (ngSubmit)="addRoom()">
+              <div class="form-group mb-3">
+                <label for="roomId">Room ID</label>
+                <input type="text" class="form-control" id="roomId" name="roomId" 
+                       placeholder="Enter Room ID" [(ngModel)]="room.roomId" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="hotelId">Hotel ID</label>
+                <input type="text" class="form-control" id="hotelId" name="hotelId" 
+                       placeholder="Enter Hotel ID" [(ngModel)]="room.hotelId" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="type">Type</label>
+                <input type="text" class="form-control" id="type" name="type" 
+                       placeholder="Enter Room Type" [(ngModel)]="room.type" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" id="price" name="price" 
+                       placeholder="Enter Price" [(ngModel)]="room.price" required>
+              </div>
+              <div class="form-group mb-4">
+                <label for="features">Features</label>
+                <input type="text" class="form-control" id="features" name="features" 
+                       placeholder="Enter Features" [(ngModel)]="room.features" required>
+              </div>
+              <button type="submit" class="btn colour btn-block py-2">Enter</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+hotel listing page:
+==================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hotel Listings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .hotel-card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .hotel-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .hotel-subtext {
+      font-size: 14px;
+      color: #6c757d;
+    }
+
+    .price-box {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .btn-view {
+      background-color: #e3f3ee;
+      color: #1f8b76;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 6px 16px;
+      border: none;
+    }
+
+    .btn-add {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <button
+      type="button"
+      class="btn btn-success btn-add"
+      routerLink="/addHotel"
+    >
+      Add More Hotels
+    </button>
+
+    <div *ngIf="hotels && !error && hotels.length > 0">
+      <div class="hotel-card" *ngFor="let hotel of hotels">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="hotel-title">{{ hotel.hotelName }}</div>
+            <div class="hotel-subtext">
+              📍 {{ hotel.location }} &nbsp;&nbsp; 🏨 Room ID:
+              {{ hotel.roomId }}
+            </div>
+            <div class="hotel-subtext mt-1">
+              🧰 Amenities: {{ hotel.amenities }}
+            </div>
+            <div class="hotel-subtext mt-1">
+              🛏️ Room Count: {{ hotel.roomCount }} &nbsp;&nbsp; 👤 Manager ID:
+              {{ hotel.managerId }}
+            </div>
+          </div>
+          <div
+            class="col-md-4 d-flex flex-column justify-content-center align-items-end"
+          >
+            <div class="price-box">
+              <span><strong>Hotel ID:</strong> {{ hotel.hotelId }}</span>
+            </div>
+            <div class="price-box">
+              <button class="btn btn-view">View Rooms</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
