@@ -640,3 +640,48 @@ updated card hotel:
 
 </body>
 </html>
+
+
+
+
+add image:
+===========
+<header></header>
+<body>
+    <div class="container">
+        <h1 class="header-title">Our Hotels</h1>
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6" *ngFor="let hotel of hotels">
+                <div class="hotel-card">
+                    <div class="img-container">
+                    <img src="https://i.pinimg.com/736x/b2/85/d5/b285d5c19bf3ede848d22f281581f41c.jpg"
+                    class="img-fluid mb-1 mt-3 rounded-4" /></div>
+               
+                    <div class="card-body">
+                        <h5 class="card-title mt-1">{{ hotel.hotelName }}</h5>
+                        <div class="card-text">
+                            <p class="justify-text" style="text-align: justify;">
+                                Location: {{ hotel.location }} <br />
+                                Amenities: {{ hotel.amenities }} <br />
+                                Room Count: {{ hotel.roomCount }} <br />
+                                
+                                Manager ID: {{ hotel.managerId }}
+                            </p>
+                            <div class="d-flex justify-content-between gap-2 mt-3 mb-2 ">
+                                <a href="#" class="btn btn-book rounded-3">Book </a>
+                                <a href="#" class="btn btn-book rounded-3">Update</a>
+                                <a href="#" class="btn btn-book rounded-3">Delete</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4 ">
+        <button class="btn btn-add-hotel" routerLink="/addHotel">Add More Hotels</button>
+    </div>
+
+</body>
