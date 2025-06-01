@@ -689,3 +689,54 @@ add image:
   </div>
 </body>
 
+specific room:
+================
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RoomService } from '../room.service';
+
+@Component({
+  selector: 'app-list-rooms',
+  templateUrl: './list-rooms.component.html',
+  styleUrl: './list-rooms.component.css',
+  standalone: true,
+  imports: []
+})
+export class ListRoomsComponent {
+  rooms: Room[] = [];
+  hotelId!: number;
+  error: any;
+
+  constructor(private roomService: RoomService, private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.hotelId = Number(this.route.snapshot.paramMap.get('hotelId'));
+
+    if (this.hotelId) {
+      console.log("Fetching rooms for hotel ID:", this.hotelId);
+
+      this.roomService.getRoomsByHotelId(this.hotelId).subscribe(
+        (data: Room[]) => {
+          this.rooms = data || [];
+          console.log("Rooms fetched:", this.rooms);
+        },
+        (error) => {
+          this.error = error.message;
+          console.error('Error fetching rooms:', error);
+        }
+      );
+    } else {
+      console.warn('No hotel ID found in route!');
+    }
+  }
+}
+
+export class Room {
+  roomId!: number;
+  hotelId!: number;
+  type!: string;
+  price!: number;
+  features!: string;
+}
+
+
